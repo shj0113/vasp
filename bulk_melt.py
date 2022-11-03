@@ -3,7 +3,7 @@ import sys
 import string
 from pymatgen.core.structure import Structure
 #from pymatgen.core.lattice import Lattice
-from pymatgen.io.vasp.inputs import Incar
+from pymatgen.io.vasp.inputs import Incar, Kpoints
 from pymatgen.io.vasp.sets import MPRelaxSet, VaspInputSet
 
 #assert len(sys.argv)==1, "input POSCAR is required"
@@ -55,3 +55,8 @@ userset = MPRelaxSet(structure,user_incar_settings=params,user_kpoints_settings=
 #print(userset.incar)
 #userset.write_input('.',include_cif=True)
 userset.write_input('.')
+
+kpoints = Kpoints.from_file("KPOINTS")
+kpoint = kpoints.gamma_automatic(kpts=(1,1,1), shift=(0,0,0))
+kpoint.write_file("KPOINTS")
+Incar.from_dict(params).write_file("INCAR")
