@@ -1,0 +1,9 @@
+#!/bin/sh
+if [ $# -eq 0 ]; then
+    echo "No jobid is supplied"
+else
+    tmpdir=`scontrol show job $1 | grep WorkDir | perl -pe "s/WorkDir=//g"`
+    # tmpdir=`scontrol show job $1 | perl -pe 'BEGIN={$dir}{if /Output_Path/ {unless(/FW_job.out/ {$dir = $dir.$_}} }END={print $dir}'`
+    echo $tmpdir
+    cd $tmpdir
+fi

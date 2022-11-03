@@ -1,0 +1,13 @@
+#!/bin/sh
+file=${1:-POSCAR}
+atomd.pl $file
+file2=${file}.org.xbs
+poscar2bs
+xbs poscar.bs &
+#echo $file2 $file
+
+if [ -f $file2 ]
+then 
+mv $file2 $file
+fi
+

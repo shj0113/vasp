@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cat > STOPCAR <<!
+LSTOP=.TRUE.
+#LABORT=.TRUE.
+!
+
