@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from pymatgen.core.structure import Structure
 
 structure = Structure.from_file("POSCAR")
@@ -12,4 +13,5 @@ for i in range(num_of_atoms):
         else:
             dist.append(distance)
 
-print(min(dist))
+print("minimum distance: " ,min(dist))
+
