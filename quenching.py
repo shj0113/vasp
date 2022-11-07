@@ -20,7 +20,7 @@ for i in range(1,2):
         os.chdir("..")
         os.chdir("2_quench")
         os.system('mv CONTCAR POSCAR')
-        os.system('bulk_qeunch.py') 
+        os.system('bulk_quench.py') 
         os.system('pbs_amor.pl')
 #        os.system('qsub pbs')
         os.chdir("..")
