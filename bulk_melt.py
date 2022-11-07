@@ -29,6 +29,7 @@ params= dict(
     ISIF=3,
     NCORE=4,
     ISMEAR=0,
+    NELM=200,
     SIGMA=0.05,
     EDIFF=1E-08,
     IBRION=0,
