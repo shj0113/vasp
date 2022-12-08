@@ -78,7 +78,7 @@ def generating_amor(doping_number):
     f.close()
 
 # 실제 계산 돌리는 코드
-for i in range(1,3): # 도핑 농도 설정
+for i in range(1,2): # 도핑 농도 설정
     component_name = domain + str(total_num-i) + "_" + dopant + str(i)
     os.mkdir(component_name)
     os.chdir(component_name)
@@ -90,7 +90,7 @@ for i in range(1,3): # 도핑 농도 설정
         os.chdir("1_relax")
         generating_amor(i)
         os.system('bulk_amor_relax.py')
-        os.system('pbs.pl')
+#        os.system('pbs.pl')
 #         os.system('qsub pbs')
         os.chdir("..")
         os.chdir("..")
